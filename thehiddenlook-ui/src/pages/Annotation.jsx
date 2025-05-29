@@ -6,7 +6,7 @@ import {
   deleteClass,
   annotateImages,
   exportAnnotations
-} from '../api/api';
+} from '../api/api_annotation';
 
 function Annotation() {
   const [classes, setClasses] = useState([]);
@@ -136,9 +136,10 @@ function Annotation() {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      overflow: 'hidden',
       padding: '20px'
     },
-    appWindow: {
+    appWindow: {  
       backgroundColor: 'white',
       borderRadius: '16px',
       boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
@@ -146,8 +147,7 @@ function Annotation() {
       maxWidth: '1000px',
       padding: '40px',
       position: 'relative',
-      margin: '50px',
-      left :'350px'
+      margin: 0
     },
     backButton: {
       position: 'absolute',

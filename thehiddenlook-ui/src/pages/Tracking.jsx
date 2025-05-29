@@ -81,6 +81,7 @@ function Tracking() {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      overflow: 'hidden',
       padding: '20px'
     },
     appWindow: {
@@ -91,8 +92,7 @@ function Tracking() {
       maxWidth: '1000px',
       padding: '40px',
       position: 'relative',
-      margin: '50px',
-      left :'320px'
+      margin: 0
     },
     backButton: {
       position: 'absolute',

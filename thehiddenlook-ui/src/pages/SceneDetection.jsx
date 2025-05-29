@@ -106,8 +106,7 @@ function SceneDetection() {
       maxWidth: '1000px',
       padding: '40px',
       position: 'relative',
-      margin: '50px',
-      left :'250px'
+      margin: 0
     },
     backButton: {
       position: 'absolute',

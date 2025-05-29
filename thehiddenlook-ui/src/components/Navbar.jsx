@@ -7,14 +7,20 @@ const modules = [
   { label: '🎬 Scènes', path: '/scenes' },
   { label: '🔍 Recherche', path: '/patterns' },
   { label: '😊 Visages', path: '/faces' },
-  { label: '📤 Exports', path: '/exports' } // Nouvel élément ajouté
+  { label: '📤 Exports', path: '/exports' }
 ];
 
-const Navbar = () => {
+const Navbar = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   if (location.pathname === '/') return null;
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+    navigate('/auth');
+  };
 
   return (
     <nav style={styles.navbar}>
@@ -30,6 +36,7 @@ const Navbar = () => {
               {mod.label}
             </button>
           ))}
+          <button onClick={handleLogout} style={styles.logoutButton}>Se déconnecter</button>
         </div>
       </div>
     </nav>
@@ -75,10 +82,7 @@ const styles = {
     borderRadius: '6px',
     cursor: 'pointer',
     fontSize: '0.9rem',
-    transition: 'all 0.2s ease',
-    ':hover': {
-      backgroundColor: '#f0f2f5'
-    }
+    transition: 'all 0.2s ease'
   },
   activeNavButton: {
     background: '#4f46e5',
@@ -89,6 +93,16 @@ const styles = {
     cursor: 'pointer',
     fontSize: '0.9rem',
     fontWeight: '500'
+  },
+  logoutButton: {
+    background: '#e53e3e',
+    color: '#fff',
+    border: 'none',
+    padding: '8px 16px',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    fontSize: '0.9rem',
+    marginLeft: '12px'
   }
 };
 

@@ -144,8 +144,7 @@ function PatternMatching() {
       maxWidth: '1000px',
       padding: '40px',
       position: 'relative',
-      margin: '50px',
-      left :'150px'
+      margin: 0
     },
     backButton: {
       position: 'absolute',

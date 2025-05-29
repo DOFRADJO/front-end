@@ -113,8 +113,7 @@ function FaceRecognition() {
       maxWidth: '1000px',
       padding: '40px',
       position: 'relative',
-      margin: '50px',
-      left :'300px'
+      margin: 0
     },
   
     backButton: {
